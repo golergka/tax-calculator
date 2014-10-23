@@ -12,8 +12,12 @@
 				multiplier = 0.001;
 			} else if ($scope.cost < 20000000) {
 				multiplier = 0.0015;
-			} else {
+			} else if ($scope.cost < 50000000) {
 				multiplier = 0.002;
+			} else if ($scope.cost < 300000000) {
+				multiplier = 0.003;
+			} else {
+				multiplier = 0.02;
 			}
 			return meterCost * ($scope.area - 20) * multiplier;
 		};
