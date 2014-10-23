@@ -12,8 +12,8 @@
 <body ng-controller="TaxCalculatorCtrl">
   <div class="container">
 		<h1>Калькулятор налога на недвижимость</h1>
-		<p>Узнайте кадастровый номер своей квартиры <a href="https://rosreestr.ru/wps/portal/p/cc_ib_state_services/cc_ib_function/cc_ib_electronic_state/online_request">здесь</a>.</p>
-		<p>С помощью кадастрового номера узнайте кадастровую стоимость своей квартиры <a href="http://maps.rosreestr.ru/Portalonline/">здесь</a>.</p>
+		<p>Узнайте кадастровый номер своей квартиры <a href="https://rosreestr.ru/wps/portal/p/cc_ib_state_services/cc_ib_function/cc_ib_electronic_state/online_request" target="_blank">здесь</a>.</p>
+		<p>С помощью кадастрового номера узнайте кадастровую стоимость своей квартиры <a href="http://maps.rosreestr.ru/Portalonline/" target="_blank">здесь</a>.</p>
 		<div class="form-group">
 			<label for="area">Площадь, м2</label>
 			<input ng-model="area"
@@ -30,7 +30,7 @@
 				placeholder="Введите площадь вашей квартиры или дома в квадратных метрах">
       <a class="example" ng-click="cost = exampleCost">Средняя стоимость московской квартиры — {{exampleCost | currency:"":0}} ₽</a>
 		</div>
-		<p class="lead">Налог: <strong>{{tax() | currency:"":0}} ₽</strong> в год, начиная с 2016</p>
+		<p class="lead" ng-show="tax()">Налог: <strong>{{tax() | currency:"":0}} ₽</strong> в год, начиная с 2016</p>
   </div>
 </body>
 </html>
