@@ -2,21 +2,32 @@
 <html lang="en" ng-app="taxCalculatorApp">
 <head>
   <meta charset="utf-8">
-  <title>Подсчёт налога на недвижимость</title>
+  <title>Калькулятор налога на недвижимость</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
 </head>
 <body ng-controller="TaxCalculatorCtrl">
-  <div class="view-container">
-		<div class="view-frame">
-			<p>Узнайте кадастровый номер своей квартиры <a href="https://rosreestr.ru/wps/portal/p/cc_ib_state_services/cc_ib_function/cc_ib_electronic_state/online_request">здесь</a></p>
-			<p>С помощью кадастрового номера узнайте кадастровую стоимость своей квартиры <a href="http://maps.rosreestr.ru/Portalonline/">здесь</a></p>
-			<p>Метраж: <input ng-model="area"></p>
-			<p>Стоимость: <input ng-model="cost"></p>
-			<p>Налог: {{tax()}}</p>
+  <div class="container">
+		<h1>Калькулятор налога на недвижимость</h1>
+		<p>Узнайте кадастровый номер своей квартиры <a href="https://rosreestr.ru/wps/portal/p/cc_ib_state_services/cc_ib_function/cc_ib_electronic_state/online_request">здесь</a>.</p>
+		<p>С помощью кадастрового номера узнайте кадастровую стоимость своей квартиры <a href="http://maps.rosreestr.ru/Portalonline/">здесь</a>.</p>
+		<div class="form-group">
+			<label for="area">Площадь, м2</label>
+			<input ng-model="area"
+				class="form-control"
+				id="area"
+				placeholder="Введите площадь вашей квартиры или дома в квадратных метрах">
 		</div>
+		<div class="form-group">
+			<label for="cost">Кадастровая стоимость квартиры</label>
+			<input ng-model="cost"
+				class="form-control"
+				id="cost"
+				placeholder="Введите площадь вашей квартиры или дома в квадратных метрах">
+		</div>
+		<p>Налог: {{tax()}}</p>
   </div>
 </body>
 </html>

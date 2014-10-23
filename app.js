@@ -5,8 +5,6 @@
 (function(){
 	var app = angular.module('taxCalculatorApp', []);
 	app.controller('TaxCalculatorCtrl', ['$scope', function($scope){
-		$scope.area = 40;
-		$scope.cost = 1000000;
 		$scope.tax = function() {
 			var meterCost = $scope.cost / $scope.area;
 			var multiplier;
