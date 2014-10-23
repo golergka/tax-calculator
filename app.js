@@ -3,7 +3,7 @@
 })();
 
 (function(){
-	var app = angular.module('taxCalculatorApp', []);
+	var app = angular.module('taxCalculatorApp', ['fcsa-number']);
 	app.controller('TaxCalculatorCtrl', ['$scope', function($scope){
 		$scope.exampleCost = 8640000;
 		$scope.exampleArea = 54;
