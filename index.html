@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="taxCalculatorApp">
 <head>
   <meta charset="utf-8">
   <title>Подсчёт налога на недвижимость</title>
@@ -8,12 +8,14 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="app.js"></script>
 </head>
-<body>
-
+<body ng-controller="TaxCalculatorCtrl">
   <div class="view-container">
-    <div ng-view class="view-frame"></div>
+		<div class="view-frame">
+			<p>Метраж: <input ng-model="area"></p>
+			<p>Стоимость: <input ng-model="cost"></p>
+			<p>Налог: {{tax()}}</p>
+		</div>
   </div>
-
 </body>
 </html>
 
