@@ -34,7 +34,7 @@
 				placeholder="Введите площадь вашей квартиры или дома в квадратных метрах">
       <a class="example" ng-click="cost = exampleCost">Средняя стоимость московской квартиры — {{exampleCost | currency:"":0}} ₽</a>
 		</div>
-		<p class="lead" ng-show="tax()">Налог: <strong>{{tax() | currency:"":0}} ₽</strong> в год, начиная с 2016</p>
+		<p class="lead" ng-show="tax()">Налог: <strong>{{tax() | currency:"":0}} ₽</strong> в год</p>
 		<p class="alert alert-info" ng-hide="tax()">Введите данные вашей квартиры, чтобы узнать размер налога</p>
   </div>
 </body>
