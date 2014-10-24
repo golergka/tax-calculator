@@ -5,6 +5,7 @@
 (function(){
 	var app = angular.module('taxCalculatorApp', ['fcsa-number']);
 	app.controller('TaxCalculatorCtrl', ['$scope', function($scope){
+		$scope.firstFlat = true;
 		$scope.exampleCost = 8640000;
 		$scope.exampleArea = 54;
 		$scope.tax = function() {
@@ -21,7 +22,11 @@
 			} else {
 				multiplier = 0.02;
 			}
-			return meterCost * ($scope.area - 20) * multiplier;
+			var effectiveArea = $scope.area;
+			if ($scope.firstFlat) {
+				effectiveArea -= 20;
+			}
+			return meterCost * effectiveArea * multiplier;
 		};
 	}]);
 })();
